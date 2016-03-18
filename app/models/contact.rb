@@ -15,8 +15,8 @@ class Contact < ActiveRecord::Base
   end
 
   def self.edit_contact(id, name, phone, address)
-    everyone_count = self.all.count
-    return puts "Hey, Something went wrong! I can't find that USER! Are you sure that is the right ID?" unless self.exists?(id: id)
+    # everyone_count = self.all.count
+    # return puts "Hey, Something went wrong! I can't find that USER! Are you sure that is the right ID?" unless self.exists?(id: id)
     contact = self.find_by(id: id)
     contact[:name] = name
     contact[:phone] = phone
@@ -25,9 +25,9 @@ class Contact < ActiveRecord::Base
   end
 
   def self.delete_contact(id)
-    everyone_array = self.all
-    everyone_count = self.all.count
-    return puts "Hey, Something went wrong! I can't find that USER! Are you sure that is the right ID?" unless self.exists?(id: id)
+    # everyone_array = self.all
+    # everyone_count = self.all.count
+    # return puts "Hey, Something went wrong! I can't find that USER! Are you sure that is the right ID?" unless self.exists?(id: id)
     contact = self.find_by(id: id)
     contact.destroy
   end
