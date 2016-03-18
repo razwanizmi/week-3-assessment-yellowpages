@@ -2,11 +2,6 @@
 require_relative 'config/application'
 require 'byebug'
 
-# Your Code begins from this line onwards #
-# Contact.new_contact("Harry Potter", "+60123456789", "4 Privet Drive")
-# Contact.new_contact("David Cameron", "+44123456789", "10 Downing Street")
-# Contact.new_contact("Mickey Mouse", "+11123456789", "Big Castle, Disneyland")
-
 case ARGV[0]
 when "--list"
   Contact.everyone
@@ -37,28 +32,3 @@ when "--delete"
 else
   puts "Unrecognised command \"#{ARGV[0]}\". Possible commands are \"--list\", \"--add\", \"--update\", or \"--delete\"."
 end
-
-# case ARGV[0]
-# when "--list"
-#   Contact.everyone
-# when "--add"
-#   if ARGV.count != 4
-#     puts "Wrong number of arguments. Proper usage is --add \"<name>\" \"<phone no>\" \"<address>\"" 
-#   else
-#     Contact.new_contact(ARGV[1], ARGV[2], ARGV[3])
-#   end
-# when "--update"
-#   if ARGV.count != 5
-#     puts "Wrong number of arguments. Proper usage is --update <id> \"<name>\" \"<phone no>\" \"<address>\"" 
-#   else
-#     Contact.edit_contact(ARGV[1], ARGV[2], ARGV[3], ARGV[4])
-#   end
-# when "--delete"
-#   if ARGV.count != 2
-#     puts "Wrong number of arguments. Proper usage is --delete <id>"
-#   else
-#   Contact.delete_contact(ARGV[1])
-#   end
-# else
-#   puts "Unrecognised command \"#{ARGV[0]}\". Possible commands are \"--list\", \"--add\", \"--update\", or \"--delete\"."
-# end
