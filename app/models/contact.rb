@@ -10,23 +10,17 @@ class Contact < ActiveRecord::Base
     everyone_array = self.all.select(:id, :name, :phone, :address)
     puts "List".ljust(5) + "Name".ljust(20) + "Phone No".ljust(20) + "Address".ljust(30)
     everyone_array.each_with_index do |row, index|
-      puts (index + 1).to_s.ljust(5) + row[:name].to_s.ljust(20) + row[:phone].to_s.ljust(20) + row[:address].to_s.ljust(30)
+      puts (index + 1).to_s.ljust(5) + row.name.ljust(20) + row.phone.ljust(20) + row.address.ljust(30)
     end
   end
 
   def self.edit_contact(id, name, phone, address)
     contact = self.find_by(id: id)
     contact.update(name: name, phone: phone, address: address)
-    # contact[:name] = name
-    # contact[:phone] = phone
-    # contact[:address] = address
-    # contact.save
   end
 
   def self.delete_contact(id)
     contact = self.find_by(id: id)
     contact.destroy
   end
-
-  
 end
